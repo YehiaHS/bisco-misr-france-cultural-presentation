@@ -178,16 +178,16 @@
     width:100%;height:5px;background:var(--orange);z-index:3;}
   .ad-split{
     position:relative;z-index:2;
-    display:grid;grid-template-columns:auto 1fr;
-    gap:0;width:100%;height:100%;align-items:stretch;
+    display:grid;grid-template-columns:minmax(0,34%) minmax(0,66%);
+    gap:0;width:100%;height:100%;align-items:stretch;overflow:hidden;
   }
   .ad-img-col{
-    position:relative;height:100%;
+    position:relative;height:100%;min-width:0;
     display:flex;align-items:center;justify-content:center;
     background:var(--ink);flex-shrink:0;
   }
   .ad-img-col img{
-    height:100%;width:auto;max-width:50cqi;
+    height:100%;width:auto;max-width:100%;
     object-fit:contain;display:block;
     filter:drop-shadow(8px 0 32px rgba(0,0,0,.6));
   }
@@ -196,7 +196,7 @@
     width:6px;height:100%;background:var(--orange);z-index:5;
   }
   .ad-exp-col{
-    padding:44px 48px;
+    min-width:0;padding:clamp(28px,2.8cqi,44px) clamp(24px,3cqi,48px);
     display:flex;flex-direction:column;justify-content:center;
     background:var(--cream);overflow-y:auto;
   }
@@ -465,6 +465,16 @@
     .two-col,.channel-cards,.snap-grid{grid-template-columns:1fr;}
     .agenda-grid{grid-template-columns:1fr 1fr;}
     .etiq-table th:last-child,.etiq-table td:last-child{display:none;}
+  }
+
+  @media(max-width:900px){
+    .ad-exp-col{
+      padding:26px 24px;
+    }
+    .ad-exp-col .ad-tagline{font-size:.95rem;line-height:1.45;}
+    .ad-point{gap:12px;margin-bottom:12px;}
+    .ad-point .ap-body p{font-size:.76rem;line-height:1.45;}
+    .ad-footer-tag{font-size:1rem;padding:6px 16px;}
   }
 
   @media(min-width:901px){
@@ -1620,15 +1630,24 @@ function updateNavHint(){
     : '← → Navigate';
 }
 
+function isWideSplitSlide(){
+  return Boolean(SLIDES[current]?.querySelector('.ad-split'));
+}
+
 function updateStageScale(recenter=false){
+  const isMobileViewport = window.innerWidth <= 900;
+  const isPortraitViewport = window.innerHeight > window.innerWidth;
+  const fitWideSlide = readableView && isMobileViewport && isWideSplitSlide();
   const fitScale = Math.min(window.innerWidth / DECK_BASE.width, window.innerHeight / DECK_BASE.height);
-  const readableBoost = window.innerWidth <= 900
-    ? (window.innerHeight > window.innerWidth ? 1.75 : 1.25)
-    : 1.05;
+  const readableBoost = fitWideSlide
+    ? 1
+    : (isMobileViewport
+        ? (isPortraitViewport ? 1.75 : 1.25)
+        : 1.05);
   const scale = readableView ? Math.min(1, fitScale * readableBoost) : fitScale;
   const scaledWidth = DECK_BASE.width * scale;
   const scaledHeight = DECK_BASE.height * scale;
-  const padding = readableView ? 16 : 0;
+  const padding = readableView && !fitWideSlide ? 16 : 0;
   const offsetX = Math.max(padding, (window.innerWidth - scaledWidth) / 2);
   const offsetY = Math.max(padding, (window.innerHeight - scaledHeight) / 2);
 
@@ -1641,7 +1660,7 @@ function updateStageScale(recenter=false){
     SHELL.scrollTo({left:0,top:0,behavior:'auto'});
   }else if(recenter){
     const horizontalOverflow = Math.max(0, scaledWidth + offsetX * 2 - window.innerWidth);
-    SHELL.scrollTo({left:horizontalOverflow / 2,top:0,behavior:'smooth'});
+    SHELL.scrollTo({left:fitWideSlide ? 0 : horizontalOverflow / 2,top:0,behavior:'smooth'});
   }
 
   updateNavHint();
@@ -1668,6 +1687,7 @@ function setCurrentSlide(idx){
   current = Math.max(0, Math.min(TOTAL - 1, idx));
   activateSlide(current);
   updateUI();
+  if(readableView && !exporting) updateStageScale(true);
 }
 
 function goTo(idx){
