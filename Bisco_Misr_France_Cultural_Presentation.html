@@ -501,6 +501,17 @@
   body.exporting #slide-counter,
   body.exporting #nav-hint,
   body.exporting .arrow{opacity:0;pointer-events:none;}
+  body.exporting #presentation-shell{
+    position:absolute;top:0;left:0;right:auto;bottom:auto;
+    width:calc(var(--deck-base-width) * 1px);
+    height:calc(var(--deck-base-height) * 1px);
+    overflow:visible !important;
+  }
+  body.exporting #presentation-stage{
+    transform:none !important;
+    width:calc(var(--deck-base-width) * 1px);
+    height:calc(var(--deck-base-height) * 1px);
+  }
   .exporting *{animation-play-state:paused !important;scroll-behavior:auto !important;}
   .exporting .slide,
   .exporting .fade-up,
@@ -1767,6 +1778,30 @@ function prepareSlideForExport(slide){
   });
 }
 
+function prepareClonedDocumentForExport(clonedDocument, slideIndex){
+  clonedDocument.body.classList.add('exporting');
+  clonedDocument.documentElement.style.setProperty('--stage-scale', '1');
+  clonedDocument.documentElement.style.setProperty('--stage-offset-x', '0px');
+  clonedDocument.documentElement.style.setProperty('--stage-offset-y', '0px');
+
+  const clonedShell = clonedDocument.getElementById('presentation-shell');
+  if(clonedShell){
+    clonedShell.classList.remove('readable-mode');
+    clonedShell.scrollTo?.({left:0, top:0, behavior:'auto'});
+  }
+
+  const clonedSlides = clonedDocument.querySelectorAll('.slide');
+  clonedSlides.forEach((slide, idx)=>{
+    slide.classList.remove('active', 'prev');
+    if(idx === slideIndex) slide.classList.add('active');
+    else if(idx < slideIndex) slide.classList.add('prev');
+
+    slide.querySelectorAll('.bar').forEach(bar=>{
+      bar.style.width = `${bar.getAttribute('data-w')}%`;
+    });
+  });
+}
+
 async function exportPresentationToPptx(){
   if(exporting) return;
   if(typeof window.html2canvas !== 'function' || typeof window.PptxGenJS !== 'function'){
@@ -1813,7 +1848,8 @@ async function exportPresentationToPptx(){
         useCORS:true,
         allowTaint:false,
         imageTimeout:0,
-        logging:false
+        logging:false,
+        onclone: clonedDocument => prepareClonedDocumentForExport(clonedDocument, i)
       });
 
       const slide = pptx.addSlide();
@@ -1821,7 +1857,7 @@ async function exportPresentationToPptx(){
         data:canvas.toDataURL('image/png', 1),
         x:0,
         y:0,
-        w:13.333,
+        w:13.333333,
         h:7.5
       });
     }
