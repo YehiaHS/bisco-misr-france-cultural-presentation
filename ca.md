@@ -1,6 +1,6 @@
 # Cultural Analysis: Bisco Misr — Egypt (Home Country) vs. France (Host Country)
 
-**Course:** Crisis Communication Management | **Date:** March 2026
+**Course:** International Marketing | **Date:** March 2026
 
 ---
 
