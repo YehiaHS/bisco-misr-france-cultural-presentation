@@ -578,6 +578,73 @@
   .trade-fact .tf-value.blue{color:var(--french-blue);}
   .trade-fact .tf-value.gold{color:var(--gold);}
   .trade-fact .tf-label{font-size:.75rem;line-height:1.4;color:rgba(26,18,9,.66);}
+  .fin-slide{isolation:isolate;}
+  .fin-slide .slide-inner{position:relative;z-index:2;}
+  .fin-bg-layer{
+    position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;
+  }
+  .fin-bg-svg{position:absolute;inset:0;width:100%;height:100%;}
+  .fin-bg-icon{
+    position:absolute;width:92px;height:92px;opacity:.09;mix-blend-mode:multiply;
+    filter:sepia(1) saturate(6) hue-rotate(-18deg) brightness(.78);
+    animation:finIconFloat 12s ease-in-out infinite;transform-origin:center;
+  }
+  .fin-bg-icon.blue{filter:sepia(1) saturate(9) hue-rotate(165deg) brightness(.8);}
+  .fin-bg-icon.gold{filter:sepia(1) saturate(5) hue-rotate(4deg) brightness(.95);}
+  .fin-bg-icon.orange{filter:sepia(1) saturate(7) hue-rotate(-24deg) brightness(.82);}
+  @keyframes finIconFloat{0%,100%{transform:translate3d(0,0,0) rotate(0deg)}50%{transform:translate3d(0,-18px,0) rotate(4deg)}}
+  @keyframes finDashFlow{to{stroke-dashoffset:-240}}
+  @keyframes finPulseSoft{0%,100%{opacity:.16;transform:scale(.95)}50%{opacity:.42;transform:scale(1.03)}}
+  @keyframes finBarLift{0%,100%{transform:scaleY(.58)}50%{transform:scaleY(1)}}
+  @keyframes finOrbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  @keyframes finGlow{0%,100%{opacity:.08}50%{opacity:.22}}
+  .fin-bg-overview .fo-glow{fill:rgba(232,56,10,.06);animation:finGlow 8s ease-in-out infinite;}
+  .fin-bg-overview .fo-orbit{transform-origin:center;transform-box:fill-box;animation:finOrbit 32s linear infinite;}
+  .fin-bg-overview .fo-ring{fill:none;stroke-width:1.6;}
+  .fin-bg-overview .fo-ring.gold{stroke:rgba(201,150,58,.22);}
+  .fin-bg-overview .fo-ring.blue{stroke:rgba(0,35,149,.16);}
+  .fin-bg-overview .fo-link{fill:none;stroke-width:2;stroke-dasharray:12 14;animation:finDashFlow 18s linear infinite;}
+  .fin-bg-overview .fo-link.gold{stroke:rgba(201,150,58,.22);}
+  .fin-bg-overview .fo-link.blue{stroke:rgba(0,35,149,.18);}
+  .fin-bg-overview .fo-node{
+    fill:rgba(232,56,10,.16);stroke:rgba(232,56,10,.28);stroke-width:2;
+    transform-box:fill-box;transform-origin:center;animation:finPulseSoft 6s ease-in-out infinite;
+  }
+  .fin-bg-overview .fo-node.gold{fill:rgba(201,150,58,.2);stroke:rgba(201,150,58,.34);}
+  .fin-bg-overview .fo-node.blue{fill:rgba(0,35,149,.12);stroke:rgba(0,35,149,.22);}
+  .fin-bg-econ .econ-grid line{stroke:rgba(26,18,9,.06);stroke-width:1;}
+  .fin-bg-econ .econ-line{fill:none;stroke:rgba(0,35,149,.2);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:18 14;animation:finDashFlow 22s linear infinite;}
+  .fin-bg-econ .econ-bar{
+    fill:rgba(201,150,58,.12);stroke:rgba(201,150,58,.26);stroke-width:1.5;
+    transform-box:fill-box;transform-origin:center bottom;animation:finBarLift 4.8s ease-in-out infinite;
+  }
+  .fin-bg-econ .econ-bar.blue{fill:rgba(0,35,149,.08);stroke:rgba(0,35,149,.18);}
+  .fin-bg-econ .econ-bar.orange{fill:rgba(232,56,10,.08);stroke:rgba(232,56,10,.18);}
+  .fin-bg-econ .econ-glow{fill:rgba(201,150,58,.12);animation:finGlow 7s ease-in-out infinite;}
+  .fin-bg-market .market-block{fill:rgba(255,255,255,.24);stroke:rgba(26,18,9,.08);stroke-width:2;}
+  .fin-bg-market .market-block.gold{fill:rgba(201,150,58,.1);stroke:rgba(201,150,58,.18);}
+  .fin-bg-market .market-block.blue{fill:rgba(0,35,149,.08);stroke:rgba(0,35,149,.16);}
+  .fin-bg-market .market-route{fill:none;stroke:rgba(26,18,9,.16);stroke-width:3;stroke-linecap:round;stroke-dasharray:16 14;animation:finDashFlow 20s linear infinite;}
+  .fin-bg-market .market-route.blue{stroke:rgba(0,35,149,.2);}
+  .fin-bg-market .market-stop{
+    fill:rgba(232,56,10,.18);stroke:rgba(232,56,10,.28);stroke-width:2;
+    transform-box:fill-box;transform-origin:center;animation:finPulseSoft 5.5s ease-in-out infinite;
+  }
+  .fin-bg-market .market-stop.blue{fill:rgba(0,35,149,.14);stroke:rgba(0,35,149,.24);}
+  .fin-bg-market .market-stop.gold{fill:rgba(201,150,58,.18);stroke:rgba(201,150,58,.28);}
+  .fin-bg-trade .trade-grid line{stroke:rgba(26,18,9,.05);stroke-width:1;}
+  .fin-bg-trade .trade-arc{fill:none;stroke:rgba(0,35,149,.18);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:18 14;animation:finDashFlow 21s linear infinite;}
+  .fin-bg-trade .trade-arc.gold{stroke:rgba(201,150,58,.22);}
+  .fin-bg-trade .trade-container{fill:rgba(255,255,255,.24);stroke:rgba(26,18,9,.08);stroke-width:2;}
+  .fin-bg-trade .trade-star{fill:rgba(201,150,58,.42);transform-box:fill-box;transform-origin:center;animation:finPulseSoft 4.6s ease-in-out infinite;}
+  .fin-bg-evidence .evidence-frame{fill:rgba(255,255,255,.18);stroke:rgba(26,18,9,.08);stroke-width:2;}
+  .fin-bg-evidence .evidence-line{fill:none;stroke:rgba(26,18,9,.12);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:12 14;animation:finDashFlow 18s linear infinite;}
+  .fin-bg-evidence .evidence-line.blue{stroke:rgba(0,35,149,.16);}
+  .fin-bg-evidence .evidence-line.gold{stroke:rgba(201,150,58,.22);}
+  .fin-bg-evidence .evidence-dot{
+    fill:rgba(232,56,10,.18);stroke:rgba(232,56,10,.3);stroke-width:2;
+    transform-box:fill-box;transform-origin:center;animation:finPulseSoft 5.8s ease-in-out infinite;
+  }
   .source-browser-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1040px;margin:24px auto 0;}
   .source-browser{
     background:#fff;border:1px solid rgba(26,18,9,.12);border-radius:14px;
@@ -670,6 +737,7 @@
     .fin-two-col,.source-browser-grid{grid-template-columns:1fr;}
     .fin-value{font-size:2rem;}
     .fin-signal-row{grid-template-columns:120px 1fr 56px;gap:10px;}
+    .fin-bg-icon{width:72px;height:72px;opacity:.08;}
   }
 
   @media(min-width:901px){
@@ -693,6 +761,8 @@
     .fin-signal-row{grid-template-columns:1fr;gap:6px;}
     .fin-signal-state{text-align:left;}
     .trade-step:not(:last-child)::after{content:'↓';left:50%;right:auto;top:auto;bottom:-18px;transform:translateX(-50%);}
+    .fin-bg-layer{opacity:.72;}
+    .fin-bg-icon{width:58px;height:58px;opacity:.07;}
   }
 
   body.exporting #top-controls,
@@ -1398,7 +1468,28 @@
   </div>
 
   <!-- ─── SLIDE 20: FINANCIAL OVERVIEW ─── -->
-  <div class="slide light-slide" id="s16e" data-index="19">
+  <div class="slide light-slide fin-slide" id="s16e" data-index="19">
+    <div class="fin-bg-layer fin-bg-overview" aria-hidden="true">
+      <svg class="fin-bg-svg" viewBox="0 0 1600 900" preserveAspectRatio="none">
+        <circle class="fo-glow" cx="800" cy="430" r="360"></circle>
+        <g class="fo-orbit">
+          <circle class="fo-ring gold" cx="800" cy="430" r="210"></circle>
+          <circle class="fo-ring blue" cx="800" cy="430" r="320"></circle>
+        </g>
+        <path class="fo-link gold" d="M390 250 C 560 300 690 360 800 430"></path>
+        <path class="fo-link blue" d="M1210 250 C 1040 300 910 360 800 430"></path>
+        <path class="fo-link blue" d="M390 640 C 560 590 690 510 800 430"></path>
+        <path class="fo-link gold" d="M1210 640 C 1040 590 910 510 800 430"></path>
+        <circle class="fo-node gold" cx="390" cy="250" r="16"></circle>
+        <circle class="fo-node blue" cx="1210" cy="250" r="16"></circle>
+        <circle class="fo-node blue" cx="390" cy="640" r="16"></circle>
+        <circle class="fo-node gold" cx="1210" cy="640" r="16"></circle>
+      </svg>
+      <img src="assets/images/financial-icons/currency-euro.svg" alt="" class="fin-bg-icon gold" style="top:108px;left:140px;width:104px;"/>
+      <img src="assets/images/financial-icons/chart-bar.svg" alt="" class="fin-bg-icon blue" style="top:118px;right:160px;width:96px;animation-delay:2.4s;"/>
+      <img src="assets/images/financial-icons/shopping-cart.svg" alt="" class="fin-bg-icon orange" style="bottom:138px;left:220px;width:88px;animation-delay:4.8s;"/>
+      <img src="assets/images/financial-icons/ship.svg" alt="" class="fin-bg-icon blue" style="bottom:126px;right:210px;width:100px;animation-delay:1.2s;"/>
+    </div>
     <div class="slide-inner" style="text-align:center;max-width:1080px;width:min(1080px,92cqi);">
       <div class="tag orange fade-up">Phase 2 · Week 6</div>
       <h2 class="slide-title fade-up">Financial <span class="orange">Analysis</span></h2>
@@ -1438,7 +1529,32 @@
   </div>
 
   <!-- ─── SLIDE 21: ECONOMIC ENVIRONMENT ─── -->
-  <div class="slide light-slide" id="s16f" data-index="20">
+  <div class="slide light-slide fin-slide" id="s16f" data-index="20">
+    <div class="fin-bg-layer fin-bg-econ" aria-hidden="true">
+      <svg class="fin-bg-svg" viewBox="0 0 1600 900" preserveAspectRatio="none">
+        <g class="econ-grid">
+          <line x1="90" y1="170" x2="1510" y2="170"></line>
+          <line x1="90" y1="290" x2="1510" y2="290"></line>
+          <line x1="90" y1="410" x2="1510" y2="410"></line>
+          <line x1="90" y1="530" x2="1510" y2="530"></line>
+          <line x1="90" y1="650" x2="1510" y2="650"></line>
+          <line x1="180" y1="120" x2="180" y2="760"></line>
+          <line x1="420" y1="120" x2="420" y2="760"></line>
+          <line x1="660" y1="120" x2="660" y2="760"></line>
+          <line x1="900" y1="120" x2="900" y2="760"></line>
+          <line x1="1140" y1="120" x2="1140" y2="760"></line>
+          <line x1="1380" y1="120" x2="1380" y2="760"></line>
+        </g>
+        <circle class="econ-glow" cx="1260" cy="260" r="140"></circle>
+        <path class="econ-line" d="M120 670 C 280 610 420 640 600 520 S 940 340 1200 290 S 1400 240 1480 210"></path>
+        <rect class="econ-bar gold" x="170" y="575" width="62" height="170" rx="14"></rect>
+        <rect class="econ-bar orange" x="260" y="500" width="62" height="245" rx="14" style="animation-delay:.45s;"></rect>
+        <rect class="econ-bar blue" x="350" y="620" width="62" height="125" rx="14" style="animation-delay:.9s;"></rect>
+        <rect class="econ-bar gold" x="440" y="470" width="62" height="275" rx="14" style="animation-delay:1.35s;"></rect>
+      </svg>
+      <img src="assets/images/financial-icons/chart-bar.svg" alt="" class="fin-bg-icon gold" style="top:122px;right:118px;width:110px;animation-delay:1.6s;"/>
+      <img src="assets/images/financial-icons/currency-euro.svg" alt="" class="fin-bg-icon blue" style="bottom:124px;left:150px;width:92px;animation-delay:4.2s;"/>
+    </div>
     <div class="slide-inner" style="text-align:center;max-width:1100px;width:min(1100px,94cqi);">
       <div class="tag gold fade-up">Financial Analysis</div>
       <h2 class="slide-title fade-up">Economic <span class="gold">Environment</span></h2>
@@ -1466,7 +1582,7 @@
         <div class="fin-metric-card fade-up blue-top">
           <div class="fin-kicker">IMF Growth Outlook · 2026</div>
           <div class="fin-value blue">1.0%</div>
-          <div class="fin-copy">Growth stays positive, but slow—France is a mature demand market, not a hyper-growth one.</div>
+          <div class="fin-copy">Growth stays positive, but slow, France is a mature demand market, not a hyper-growth one.</div>
           <div class="fin-source">IMF</div>
         </div>
       </div>
@@ -1511,7 +1627,22 @@
   </div>
 
   <!-- ─── SLIDE 22: MARKET POTENTIAL ─── -->
-  <div class="slide light-slide" id="s16g" data-index="21">
+  <div class="slide light-slide fin-slide" id="s16g" data-index="21">
+    <div class="fin-bg-layer fin-bg-market" aria-hidden="true">
+      <svg class="fin-bg-svg" viewBox="0 0 1600 900" preserveAspectRatio="none">
+        <rect class="market-block" x="90" y="620" width="220" height="112" rx="30"></rect>
+        <rect class="market-block gold" x="340" y="550" width="260" height="132" rx="34"></rect>
+        <rect class="market-block blue" x="640" y="470" width="320" height="156" rx="38"></rect>
+        <path class="market-route blue" d="M180 676 C 360 630 540 570 720 490 S 1060 330 1440 250"></path>
+        <circle class="market-stop gold" cx="180" cy="676" r="14"></circle>
+        <circle class="market-stop" cx="560" cy="560" r="14" style="animation-delay:1.2s;"></circle>
+        <circle class="market-stop blue" cx="960" cy="388" r="14" style="animation-delay:2.4s;"></circle>
+        <circle class="market-stop gold" cx="1440" cy="250" r="14" style="animation-delay:3.6s;"></circle>
+      </svg>
+      <img src="assets/images/financial-icons/shopping-cart.svg" alt="" class="fin-bg-icon orange" style="top:130px;left:120px;width:104px;"/>
+      <img src="assets/images/financial-icons/building-store.svg" alt="" class="fin-bg-icon blue" style="top:144px;right:120px;width:98px;animation-delay:2s;"/>
+      <img src="assets/images/financial-icons/chart-bar.svg" alt="" class="fin-bg-icon gold" style="bottom:118px;right:230px;width:92px;animation-delay:4.4s;"/>
+    </div>
     <div class="slide-inner" style="text-align:center;max-width:1100px;width:min(1100px,94cqi);">
       <div class="tag blue fade-up">Financial Analysis</div>
       <h2 class="slide-title fade-up">Market <span class="blue">Potential</span></h2>
@@ -1565,13 +1696,34 @@
       </div>
 
       <div class="fin-note fade-up" style="max-width:1000px;margin:18px auto 0;">
-        <strong>Financial read-through:</strong> France can be profitable if Bisco Misr sells as a differentiated Egyptian brand with compliant French packaging&mdash;not if it enters a price war against entrenched local biscuits and private labels.
+        <strong>Financial read-through:</strong> France can be profitable if Bisco Misr sells as a differentiated Egyptian brand with compliant French packaging, not if it enters a price war against entrenched local biscuits and private labels.
       </div>
     </div>
   </div>
 
   <!-- ─── SLIDE 23: TRADE & INVESTMENT CLIMATE ─── -->
-  <div class="slide light-slide" id="s16h" data-index="22">
+  <div class="slide light-slide fin-slide" id="s16h" data-index="22">
+    <div class="fin-bg-layer fin-bg-trade" aria-hidden="true">
+      <svg class="fin-bg-svg" viewBox="0 0 1600 900" preserveAspectRatio="none">
+        <g class="trade-grid">
+          <line x1="120" y1="210" x2="1480" y2="210"></line>
+          <line x1="120" y1="360" x2="1480" y2="360"></line>
+          <line x1="120" y1="510" x2="1480" y2="510"></line>
+          <line x1="120" y1="660" x2="1480" y2="660"></line>
+        </g>
+        <path class="trade-arc gold" d="M120 750 C 340 540 560 410 820 350 S 1230 300 1480 190"></path>
+        <path class="trade-arc" d="M170 820 C 420 640 680 520 960 540 S 1280 560 1460 360"></path>
+        <rect class="trade-container" x="250" y="690" width="96" height="66" rx="16"></rect>
+        <rect class="trade-container" x="360" y="690" width="96" height="66" rx="16"></rect>
+        <rect class="trade-container" x="470" y="690" width="96" height="66" rx="16"></rect>
+        <polygon class="trade-star" points="1320,160 1325,173 1339,173 1328,181 1332,194 1320,186 1308,194 1312,181 1301,173 1315,173"></polygon>
+        <polygon class="trade-star" points="1370,210 1374,220 1385,220 1376,227 1380,238 1370,232 1360,238 1364,227 1355,220 1366,220" style="animation-delay:1.2s;"></polygon>
+        <polygon class="trade-star" points="1270,230 1274,240 1285,240 1276,247 1280,258 1270,252 1260,258 1264,247 1255,240 1266,240" style="animation-delay:2.2s;"></polygon>
+      </svg>
+      <img src="assets/images/financial-icons/ship.svg" alt="" class="fin-bg-icon blue" style="bottom:118px;left:118px;width:118px;"/>
+      <img src="assets/images/financial-icons/file-text.svg" alt="" class="fin-bg-icon gold" style="top:150px;right:200px;width:90px;animation-delay:2.6s;"/>
+      <img src="assets/images/financial-icons/currency-euro.svg" alt="" class="fin-bg-icon orange" style="bottom:128px;right:160px;width:86px;animation-delay:4.5s;"/>
+    </div>
     <div class="slide-inner" style="text-align:center;max-width:1100px;width:min(1100px,94cqi);">
       <div class="tag orange fade-up">Financial Analysis</div>
       <h2 class="slide-title fade-up">Trade &amp; <span class="orange">Investment Climate</span></h2>
@@ -1626,10 +1778,24 @@
   </div>
 
   <!-- ─── SLIDE 24: SOURCE QUOTES ─── -->
-  <div class="slide light-slide" id="s16i" data-index="23">
+  <div class="slide light-slide fin-slide" id="s16i" data-index="23">
+    <div class="fin-bg-layer fin-bg-evidence" aria-hidden="true">
+      <svg class="fin-bg-svg" viewBox="0 0 1600 900" preserveAspectRatio="none">
+        <rect class="evidence-frame" x="110" y="120" width="1380" height="660" rx="42"></rect>
+        <path class="evidence-line gold" d="M150 240 C 430 170 700 190 980 215 S 1280 260 1450 220"></path>
+        <path class="evidence-line blue" d="M150 690 C 420 620 720 580 990 620 S 1280 660 1450 600"></path>
+        <circle class="evidence-dot" cx="250" cy="270" r="16"></circle>
+        <circle class="evidence-dot" cx="640" cy="220" r="14" style="animation-delay:1.4s;"></circle>
+        <circle class="evidence-dot" cx="1040" cy="635" r="14" style="animation-delay:2.8s;"></circle>
+        <circle class="evidence-dot" cx="1360" cy="590" r="16" style="animation-delay:4.2s;"></circle>
+      </svg>
+      <img src="assets/images/financial-icons/file-text.svg" alt="" class="fin-bg-icon gold" style="top:116px;left:120px;width:102px;"/>
+      <img src="assets/images/financial-icons/file-text.svg" alt="" class="fin-bg-icon blue" style="top:144px;right:118px;width:88px;animation-delay:2.1s;"/>
+      <img src="assets/images/financial-icons/chart-bar.svg" alt="" class="fin-bg-icon orange" style="bottom:120px;left:180px;width:84px;animation-delay:4.4s;"/>
+    </div>
     <div class="slide-inner" style="text-align:center;max-width:1120px;width:min(1120px,94cqi);">
-      <div class="tag gold fade-up">Web Evidence</div>
-      <h2 class="slide-title fade-up">Source Visual <span class="gold">→ Boardroom Point</span></h2>
+      <div class="tag gold fade-up">Evidence &amp; Sources</div>
+      <h2 class="slide-title fade-up">Evidence <span class="gold">&amp; Sources</span></h2>
       <div class="divider gold fade-up"></div>
 
       <div class="source-browser-grid">
@@ -1641,7 +1807,7 @@
           <div class="browser-body">
             <div class="browser-source">Trade.gov · Distribution and Sales Channels</div>
             <p class="browser-quote">France&rsquo;s retail distribution is an <mark>important, dynamic, highly sophisticated and competitive sector</mark> of activity.</p>
-            <div class="browser-bullet"><strong>Boardroom point</strong>France offers scale, but the route in is expensive, selective, and buyer-driven.</div>
+            <div class="browser-bullet"><strong>Evidence</strong>France offers scale, but the route in is expensive, selective, and buyer-driven.</div>
           </div>
         </div>
 
@@ -1653,7 +1819,7 @@
           <div class="browser-body">
             <div class="browser-source">Trade.gov · Investment Climate Statement</div>
             <p class="browser-quote">France <mark>enthusiastically welcomes foreign investment</mark> and devotes significant resources to attracting it.</p>
-            <div class="browser-bullet"><strong>Boardroom point</strong>The operating climate supports distributor partnerships today and local establishment later if scale justifies it.</div>
+            <div class="browser-bullet"><strong>Evidence</strong>The operating climate supports distributor partnerships today and local establishment later if scale justifies it.</div>
           </div>
         </div>
 
@@ -1665,7 +1831,7 @@
           <div class="browser-body">
             <div class="browser-source">Trade.gov · Labeling / Marking Requirements</div>
             <p class="browser-quote"><mark>The use of French is compulsory</mark> in product designations, offers, presentations, invoices, and receipts.</p>
-            <div class="browser-bullet"><strong>Boardroom point</strong>French-first packaging is non-negotiable before any serious retail rollout.</div>
+            <div class="browser-bullet"><strong>Evidence</strong>French-first packaging is non-negotiable before any serious retail rollout.</div>
           </div>
         </div>
 
@@ -1677,13 +1843,13 @@
           <div class="browser-body">
             <div class="browser-source">European Commission · EU Trade Relations with Egypt</div>
             <p class="browser-quote">The EU&ndash;Egypt Association Agreement <mark>creates a free-trade area</mark> by removing tariffs on industrial products and easing trade in some agricultural goods.</p>
-            <div class="browser-bullet"><strong>Boardroom point</strong>The trade framework can improve unit economics, but only when origin and customs proof are fully in place.</div>
+            <div class="browser-bullet"><strong>Evidence</strong>The trade framework can improve unit economics, but only when origin and customs proof are fully in place.</div>
           </div>
         </div>
       </div>
 
       <p class="fade-up src-label" style="margin-top:18px;font-size:.74rem;letter-spacing:.1em;">
-        These source visuals let the slide show the website evidence first, then convert it into the commercial takeaway.
+        These source visuals keep the claim and the cited source together on the same slide.
       </p>
     </div>
   </div>
@@ -2026,7 +2192,7 @@
           </p>
           <footer style="display:flex;align-items:center;justify-content:center;gap:12px;">
             <span style="display:inline-block;width:32px;height:1px;background:#c9963a;"></span>
-            <cite style="font-family:'Inter',sans-serif;font-style:normal;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#c9963a;">Antoine de Saint-Exup&eacute;ry &mdash; Le Petit Prince</cite>
+            <cite style="font-family:'Inter',sans-serif;font-style:normal;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#c9963a;">Antoine de Saint-Exup&eacute;ry, Le Petit Prince</cite>
             <span style="display:inline-block;width:32px;height:1px;background:#c9963a;"></span>
           </footer>
         </blockquote>

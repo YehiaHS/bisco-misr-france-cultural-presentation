@@ -83,7 +83,7 @@ Bisco Misr’s best opportunity is not to compete head-on as a low-cost generic 
 - In **2024**, the EU remained **Egypt’s largest trading partner**, accounting for **22%** of Egypt’s total trade.
 
 ### Financial implication for Bisco Misr
-The agreement matters because it can improve the economics of entry—but only if Bisco Misr’s products qualify under the relevant origin and customs rules. Preferential access should be treated as a **margin opportunity to verify**, not as an automatic assumption.
+The agreement matters because it can improve the economics of entry, but only if Bisco Misr’s products qualify under the relevant origin and customs rules. Preferential access should be treated as a **margin opportunity to verify**, not as an automatic assumption.
 
 ---
 
