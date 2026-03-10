@@ -5,6 +5,7 @@ Live site: https://yehiahs.github.io/bisco-misr-france-cultural-presentation/
 ## Files
 - `index.html` redirects to the main presentation
 - `Bisco_Misr_France_Cultural_Presentation.html` contains the slide deck
+- `financial_analysis.md` contains the researched financial analysis used for the new Phase 2 slides
 - `assets/images/backgrounds/` contains localized slide backgrounds for reliable GitHub Pages rendering and PPTX export
 
 ## Features
