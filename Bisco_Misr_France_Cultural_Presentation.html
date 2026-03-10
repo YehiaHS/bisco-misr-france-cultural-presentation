@@ -474,6 +474,110 @@
     text-align:left;
   }
   .fin-note strong{color:var(--orange);}
+  .fin-overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1040px;margin:24px auto 0;}
+  .fin-focus-card{
+    position:relative;background:rgba(26,18,9,.04);border:1px solid rgba(26,18,9,.1);
+    border-radius:16px;padding:22px 18px 18px;text-align:center;overflow:hidden;
+  }
+  .fin-focus-card::after{
+    content:'';position:absolute;right:-34px;bottom:-48px;width:112px;height:112px;border-radius:50%;
+    background:rgba(232,56,10,.08);
+  }
+  .fin-focus-card.gold-tone::after{background:rgba(201,150,58,.12);}
+  .fin-focus-card.blue-tone::after{background:rgba(0,35,149,.08);}
+  .focus-icon{
+    width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    margin:0 auto 14px;background:rgba(232,56,10,.1);border:1px solid rgba(232,56,10,.2);
+    font-family:'Bebas Neue',cursive;font-size:1.6rem;letter-spacing:.04em;color:var(--orange);
+    position:relative;z-index:1;
+  }
+  .fin-focus-card.gold-tone .focus-icon{background:rgba(201,150,58,.14);border-color:rgba(201,150,58,.28);color:var(--gold);}
+  .fin-focus-card.blue-tone .focus-icon{background:rgba(0,35,149,.1);border-color:rgba(0,35,149,.2);color:var(--french-blue);}
+  .fin-focus-card h3{
+    font-family:'Bebas Neue',cursive;font-size:1.1rem;letter-spacing:.1em;color:var(--ink);margin-bottom:8px;
+    position:relative;z-index:1;
+  }
+  .fin-focus-card p{font-size:.8rem;line-height:1.5;color:rgba(26,18,9,.68);position:relative;z-index:1;}
+  .active .fin-focus-card{animation:finFloat 5s ease-in-out infinite;}
+  .active .fin-focus-card:nth-child(2){animation-delay:.4s;}
+  .active .fin-focus-card:nth-child(3){animation-delay:.8s;}
+  .active .fin-focus-card:nth-child(4){animation-delay:1.2s;}
+  @keyframes finFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .fin-chip-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px;}
+  .fin-chip{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
+    background:rgba(26,18,9,.06);border:1px solid rgba(26,18,9,.1);
+    font-size:.76rem;font-weight:600;letter-spacing:.04em;color:rgba(26,18,9,.74);
+  }
+  .fin-chip::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--orange);display:block;}
+  .fin-chip.blue::before{background:var(--french-blue);}
+  .fin-chip.gold::before{background:var(--gold);}
+  .fin-signal-panel{
+    max-width:1000px;margin:18px auto 0;background:rgba(255,255,255,.38);
+    border:1px solid rgba(26,18,9,.1);border-radius:14px;padding:20px 22px;
+  }
+  .fin-signal-panel h3{
+    font-family:'Bebas Neue',cursive;font-size:1.35rem;letter-spacing:.08em;
+    color:var(--orange);margin-bottom:14px;text-align:left;
+  }
+  .fin-signal-row{display:grid;grid-template-columns:150px 1fr 70px;gap:14px;align-items:center;margin-bottom:12px;}
+  .fin-signal-row:last-child{margin-bottom:0;}
+  .fin-signal-label{font-family:'Bebas Neue',cursive;font-size:.85rem;letter-spacing:.12em;color:rgba(26,18,9,.5);text-align:left;}
+  .fin-signal-track{height:12px;background:rgba(26,18,9,.08);border-radius:999px;overflow:hidden;position:relative;}
+  .fin-signal-fill{height:100%;border-radius:inherit;transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.4,0,.2,1);}
+  .active .fin-signal-fill{transform:scaleX(1);}
+  .fin-signal-fill.orange{background:linear-gradient(90deg,var(--orange),var(--orange-light));}
+  .fin-signal-fill.gold{background:linear-gradient(90deg,var(--gold),#e8b84b);}
+  .fin-signal-fill.blue{background:linear-gradient(90deg,var(--french-blue),#4f7bff);}
+  .fin-signal-state{font-family:'Bebas Neue',cursive;font-size:.9rem;letter-spacing:.1em;color:var(--ink);text-align:right;}
+  .market-stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .market-stat{
+    background:rgba(255,255,255,.4);border:1px solid rgba(26,18,9,.1);border-left:3px solid var(--orange);
+    border-radius:12px;padding:18px 16px;text-align:left;
+  }
+  .market-stat.blue{border-left-color:var(--french-blue);}
+  .market-stat.gold{border-left-color:var(--gold);}
+  .market-stat .ms-num{font-family:'Bebas Neue',cursive;font-size:2rem;line-height:.95;color:var(--ink);margin-bottom:6px;}
+  .market-stat .ms-label{font-family:'Bebas Neue',cursive;font-size:.82rem;letter-spacing:.12em;color:rgba(26,18,9,.48);margin-bottom:6px;}
+  .market-stat .ms-copy{font-size:.77rem;line-height:1.45;color:rgba(26,18,9,.68);}
+  .market-roadmap{display:flex;flex-direction:column;gap:14px;}
+  .market-step{
+    position:relative;padding:15px 16px 15px 56px;background:rgba(26,18,9,.04);
+    border:1px solid rgba(26,18,9,.1);border-radius:14px;text-align:left;
+  }
+  .market-step::before{
+    content:attr(data-step);position:absolute;left:16px;top:50%;transform:translateY(-50%);
+    width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:var(--orange);color:#fff;font-family:'Bebas Neue',cursive;font-size:.95rem;letter-spacing:.04em;
+  }
+  .market-step h4{font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;color:var(--ink);margin-bottom:4px;}
+  .market-step p{font-size:.78rem;line-height:1.45;color:rgba(26,18,9,.68);}
+  .market-badge{
+    display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 14px;border-radius:999px;
+    background:rgba(232,56,10,.1);border:1px solid rgba(232,56,10,.16);font-size:.78rem;font-weight:700;color:rgba(26,18,9,.78);
+  }
+  .market-badge::before{content:'!';width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;font-family:'Bebas Neue',cursive;font-size:.85rem;}
+  .trade-road{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1040px;margin:24px auto 0;}
+  .trade-step{
+    position:relative;background:rgba(255,255,255,.42);border:1px solid rgba(26,18,9,.1);
+    border-radius:14px;padding:18px 16px 16px;text-align:left;min-height:168px;
+  }
+  .trade-step:not(:last-child)::after{
+    content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);
+    color:var(--orange);font-family:'Bebas Neue',cursive;font-size:1.5rem;line-height:1;z-index:2;
+  }
+  .trade-step .ts-num{font-family:'Bebas Neue',cursive;font-size:.78rem;letter-spacing:.14em;color:rgba(26,18,9,.45);margin-bottom:8px;}
+  .trade-step h4{font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;color:var(--ink);margin-bottom:6px;}
+  .trade-step p{font-size:.78rem;line-height:1.48;color:rgba(26,18,9,.68);}
+  .trade-fact-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1040px;margin:18px auto 0;}
+  .trade-fact{
+    background:rgba(26,18,9,.04);border:1px solid rgba(26,18,9,.1);border-radius:12px;padding:14px 16px;text-align:center;
+  }
+  .trade-fact .tf-value{font-family:'Bebas Neue',cursive;font-size:1.8rem;line-height:.95;color:var(--ink);margin-bottom:6px;}
+  .trade-fact .tf-value.orange{color:var(--orange);}
+  .trade-fact .tf-value.blue{color:var(--french-blue);}
+  .trade-fact .tf-value.gold{color:var(--gold);}
+  .trade-fact .tf-label{font-size:.75rem;line-height:1.4;color:rgba(26,18,9,.66);}
   .source-browser-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1040px;margin:24px auto 0;}
   .source-browser{
     background:#fff;border:1px solid rgba(26,18,9,.12);border-radius:14px;
@@ -498,15 +602,20 @@
     font-size:.86rem;line-height:1.6;color:rgba(26,18,9,.78);
   }
   .source-browser .browser-quote mark{
-    background:rgba(232,56,10,.18);color:var(--ink);padding:0 .18em;border-radius:4px;
+    background:rgba(232,56,10,.18);color:var(--ink);padding:0 .18em;border-radius:4px;animation:sourcePulse 2.2s ease-in-out infinite;
   }
   .source-browser .browser-bullet{
-    margin-top:14px;padding:12px 14px;border-left:3px solid var(--orange);
+    position:relative;margin-top:14px;padding:12px 14px 12px 18px;border-left:3px solid var(--orange);
     background:rgba(240,229,212,.68);font-size:.8rem;line-height:1.5;color:rgba(26,18,9,.78);
+  }
+  .source-browser .browser-bullet::before{
+    content:'→';position:absolute;left:-14px;top:50%;transform:translateY(-50%);
+    color:var(--orange);font-family:'Bebas Neue',cursive;font-size:1.2rem;line-height:1;
   }
   .source-browser .browser-bullet strong{
     display:block;font-family:'Bebas Neue',cursive;font-size:.82rem;letter-spacing:.1em;color:var(--orange);margin-bottom:4px;
   }
+  @keyframes sourcePulse{0%,100%{box-shadow:0 0 0 0 rgba(232,56,10,0)}50%{box-shadow:0 0 0 6px rgba(232,56,10,.08)}}
 
   /* Marketing pills */
   .pill-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;justify-content:center;}
@@ -557,8 +666,10 @@
     .ad-point .ap-body p{font-size:.76rem;line-height:1.45;}
     .ad-footer-tag{font-size:1rem;padding:6px 16px;}
     .fin-metric-grid{grid-template-columns:repeat(2,1fr);}
+    .fin-overview-grid,.trade-road,.trade-fact-row,.market-stat-grid{grid-template-columns:repeat(2,1fr);}
     .fin-two-col,.source-browser-grid{grid-template-columns:1fr;}
     .fin-value{font-size:2rem;}
+    .fin-signal-row{grid-template-columns:120px 1fr 56px;gap:10px;}
   }
 
   @media(min-width:901px){
@@ -578,7 +689,10 @@
   @media(max-width:640px){
     #progress{display:none;}
     #nav-hint{bottom:64px;}
-    .fin-metric-grid{grid-template-columns:1fr;}
+    .fin-metric-grid,.fin-overview-grid,.trade-road,.trade-fact-row,.market-stat-grid{grid-template-columns:1fr;}
+    .fin-signal-row{grid-template-columns:1fr;gap:6px;}
+    .fin-signal-state{text-align:left;}
+    .trade-step:not(:last-child)::after{content:'↓';left:50%;right:auto;top:auto;bottom:-18px;transform:translateX(-50%);}
   }
 
   body.exporting #top-controls,
@@ -1290,20 +1404,36 @@
       <h2 class="slide-title fade-up">Financial <span class="orange">Analysis</span></h2>
       <div class="divider fade-up"></div>
       <p class="lead fade-up" style="max-width:780px;">
-        This section addresses the three core financial lenses required for a credible international market-entry recommendation.
+        The financial case has been rebuilt visually around the three required lenses, plus the margin logic behind the recommended rollout.
       </p>
-      <div class="fin-panel fade-up" style="max-width:980px;margin:22px auto 0;background:rgba(255,255,255,.38);border:2px solid rgba(26,18,9,.14);border-radius:22px;padding:28px 30px;">
-        <h3 class="orange" style="text-align:center;margin-bottom:16px;">Core Points Covered</h3>
-        <ul class="fin-list" style="margin-top:0;">
-          <li><strong style="color:var(--ink);">Economic Environment:</strong> GDP scale, consumer purchasing power, inflation, growth outlook, and euro stability.</li>
-          <li><strong style="color:var(--ink);">Market Potential:</strong> snack demand, retail scale, channel concentration, and where Bisco Misr can realistically differentiate.</li>
-          <li><strong style="color:var(--ink);">Trade &amp; Investment Climate:</strong> EU food rules, French labeling, tariff determination, logistics, and the EU&ndash;Egypt trade framework.</li>
-          <li><strong style="color:var(--ink);">Financial Read-Through:</strong> France is attractive, but success depends on compliance discipline, route-to-market choice, and margin control.</li>
-        </ul>
+      <div class="fin-overview-grid">
+        <div class="fin-focus-card fade-up gold-tone">
+          <div class="focus-icon">GDP</div>
+          <h3>Economic Environment</h3>
+          <p>Scale, purchasing power, inflation, growth pace, and euro stability.</p>
+        </div>
+        <div class="fin-focus-card fade-up blue-tone">
+          <div class="focus-icon">MKT</div>
+          <h3>Market Potential</h3>
+          <p>Retail depth, snack demand, channel size, and realistic room to differentiate.</p>
+        </div>
+        <div class="fin-focus-card fade-up">
+          <div class="focus-icon">EU</div>
+          <h3>Trade Climate</h3>
+          <p>EU food rules, French labeling, tariff logic, logistics, and origin proof.</p>
+        </div>
+        <div class="fin-focus-card fade-up gold-tone">
+          <div class="focus-icon">ROI</div>
+          <h3>Margin Logic</h3>
+          <p>Profits come from sequencing the rollout, not entering national retail too early.</p>
+        </div>
       </div>
-      <p class="fade-up src-label" style="margin-top:18px;font-size:.74rem;letter-spacing:.1em;">
-        Research synthesized from World Bank, IMF, Trade.gov, and European Commission sources in financial_analysis.md
-      </p>
+      <div class="fin-chip-row fade-up">
+        <span class="fin-chip gold">World Bank macro data</span>
+        <span class="fin-chip blue">IMF growth outlook</span>
+        <span class="fin-chip">Trade.gov retail and rules</span>
+        <span class="fin-chip gold">EU–Egypt agreement context</span>
+      </div>
     </div>
   </div>
 
@@ -1318,32 +1448,65 @@
         <div class="fin-metric-card fade-up gold-top">
           <div class="fin-kicker">GDP · 2024</div>
           <div class="fin-value gold">$3.16T</div>
-          <div class="fin-copy">France is one of Europe&rsquo;s largest economies, giving Bisco Misr access to a deep national consumer market.</div>
-          <div class="fin-source">World Bank Data</div>
+          <div class="fin-copy">A very large economy means imported snacks are entering a deep, already-proven consumer base.</div>
+          <div class="fin-source">World Bank</div>
         </div>
         <div class="fin-metric-card fade-up blue-top">
           <div class="fin-kicker">GDP per Capita · 2024</div>
           <div class="fin-value blue">$46.1K</div>
-          <div class="fin-copy">Income levels are high enough to support imported branded snacks beyond purely entry-price positioning.</div>
-          <div class="fin-source">World Bank Data</div>
+          <div class="fin-copy">Spending power supports branded, premium, and gifting-oriented biscuit purchases.</div>
+          <div class="fin-source">World Bank</div>
         </div>
         <div class="fin-metric-card fade-up">
           <div class="fin-kicker">Inflation · 2024</div>
           <div class="fin-value orange">2.0%</div>
-          <div class="fin-copy">Inflation is moderate, which helps pricing discipline and makes margin planning more predictable.</div>
-          <div class="fin-source">World Bank / Eurostat</div>
+          <div class="fin-copy">Moderate inflation gives better pricing visibility than a volatile consumer market would.</div>
+          <div class="fin-source">World Bank</div>
         </div>
         <div class="fin-metric-card fade-up blue-top">
-          <div class="fin-kicker">Currency Framework</div>
-          <div class="fin-value blue">&euro; Euro</div>
-          <div class="fin-copy">France sells in a stable currency; the main FX planning issue shifts to EUR/EGP conversion for an Egyptian exporter.</div>
-          <div class="fin-source">Euro Area Context</div>
+          <div class="fin-kicker">IMF Growth Outlook · 2026</div>
+          <div class="fin-value blue">1.0%</div>
+          <div class="fin-copy">Growth stays positive, but slow—France is a mature demand market, not a hyper-growth one.</div>
+          <div class="fin-source">IMF</div>
         </div>
       </div>
 
-      <div class="fin-note fade-up" style="max-width:1000px;margin:18px auto 0;">
-        <strong>What it means:</strong> France has the spending power to justify market-entry investment, but the IMF&rsquo;s 2026 real GDP growth outlook is only <strong>1.0%</strong>. This is a stable market, not a fast-growth market&mdash;so Bisco Misr still needs disciplined pricing, promotions, and retailer margin planning.
+      <div class="fin-two-col fade-up" style="margin-top:24px;align-items:start;">
+        <div class="fin-signal-panel" style="margin:0;">
+          <h3 class="orange">Macro signals for entry</h3>
+          <div class="fin-signal-row">
+            <span class="fin-signal-label">Spending Power</span>
+            <div class="fin-signal-track"><span class="fin-signal-fill gold" style="width:88%;"></span></div>
+            <span class="fin-signal-state">High</span>
+          </div>
+          <div class="fin-signal-row">
+            <span class="fin-signal-label">Price Visibility</span>
+            <div class="fin-signal-track"><span class="fin-signal-fill orange" style="width:72%;"></span></div>
+            <span class="fin-signal-state">Steady</span>
+          </div>
+          <div class="fin-signal-row">
+            <span class="fin-signal-label">Demand Stability</span>
+            <div class="fin-signal-track"><span class="fin-signal-fill blue" style="width:78%;"></span></div>
+            <span class="fin-signal-state">Strong</span>
+          </div>
+          <div class="fin-signal-row">
+            <span class="fin-signal-label">Growth Speed</span>
+            <div class="fin-signal-track"><span class="fin-signal-fill orange" style="width:42%;"></span></div>
+            <span class="fin-signal-state">Mature</span>
+          </div>
+        </div>
+
+        <div class="fin-panel">
+          <h3 class="gold">What the numbers imply</h3>
+          <ul class="fin-list">
+            <li>France supports an imported biscuit strategy because consumers can pay for more than the cheapest shelf option.</li>
+            <li>The better macro story is <strong style="color:var(--ink);">large and dependable</strong>, not fast-rising.</li>
+            <li>That shifts the financial question from &ldquo;Is demand there?&rdquo; to &ldquo;Can Bisco Misr protect margin after distribution and promo costs?&rdquo;</li>
+          </ul>
+        </div>
       </div>
+
+      <p class="fade-up src-label">Sources: World Bank macro indicators and IMF France outlook.</p>
     </div>
   </div>
 
@@ -1356,28 +1519,53 @@
 
       <div class="fin-two-col">
         <div class="fin-panel fade-up">
-          <h3 class="orange">Retail Scale &amp; Channels</h3>
-          <ul class="fin-list">
-            <li>France&rsquo;s retail system includes <strong>450,000+ firms</strong>, <strong>1.84 million employees</strong>, and more than <strong>$638 billion</strong> in turnover.</li>
-            <li>As of 2023 there were roughly <strong>2,303 hypermarkets</strong> and <strong>5,716 supermarkets</strong>.</li>
-            <li>More than <strong>7,000 convenience outlets</strong> and <strong>7,000 click-and-drive services</strong> support omnichannel snack buying.</li>
-            <li>National buying power is concentrated in chains such as <strong>Leclerc, Carrefour, Intermarch&eacute;, and Super U</strong>.</li>
-          </ul>
+          <h3 class="orange">Retail scale at a glance</h3>
+          <div class="market-stat-grid">
+            <div class="market-stat gold">
+              <div class="ms-num">450K+</div>
+              <div class="ms-label">Retail Firms</div>
+              <div class="ms-copy">A broad national retail base gives many channel entry points.</div>
+            </div>
+            <div class="market-stat blue">
+              <div class="ms-num">$638B+</div>
+              <div class="ms-label">Turnover</div>
+              <div class="ms-copy">Large FMCG turnover means meaningful ceiling for scale if listings work.</div>
+            </div>
+            <div class="market-stat">
+              <div class="ms-num">2,303</div>
+              <div class="ms-label">Hypermarkets</div>
+              <div class="ms-copy">Big-box chains can amplify reach very quickly.</div>
+            </div>
+            <div class="market-stat gold">
+              <div class="ms-num">5,716</div>
+              <div class="ms-label">Supermarkets</div>
+              <div class="ms-copy">Mainstream neighborhood coverage supports repeat purchases.</div>
+            </div>
+          </div>
+          <div class="market-badge">7,000+ convenience outlets and 7,000 click-and-drive services keep snack buying highly accessible.</div>
         </div>
 
         <div class="fin-panel fade-up">
-          <h3 class="blue">Bisco Misr Opportunity</h3>
-          <ul class="fin-list">
-            <li>French consumers are open to <strong>international</strong> and <strong>ethnic</strong> food brands, especially when authenticity is clear.</li>
-            <li>Bisco Misr should win through <strong>Egyptian origin</strong>, not by trying to be the cheapest generic biscuit on shelf.</li>
-            <li>Retailer concentration means margin pressure is real: one listing can scale quickly, but one bad negotiation can destroy economics.</li>
-            <li>The safest route is <strong>diaspora-first, specialty-first, mainstream-second</strong> after sell-through is proven.</li>
-          </ul>
+          <h3 class="blue">Best route to profitable traction</h3>
+          <div class="market-roadmap">
+            <div class="market-step" data-step="1">
+              <h4>Diaspora &amp; specialty launch</h4>
+              <p>Authenticity matters most here, and listing barriers are lower than in national chains.</p>
+            </div>
+            <div class="market-step" data-step="2">
+              <h4>Premium ethnic + online proof</h4>
+              <p>Use packaging fit and repeat orders to validate willingness to pay before scaling trade spend.</p>
+            </div>
+            <div class="market-step" data-step="3">
+              <h4>Mainstream chain expansion</h4>
+              <p>Enter Carrefour, Leclerc, or Intermarch&eacute; only after velocity data can defend margin.</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="fin-note fade-up" style="max-width:1000px;margin:18px auto 0;">
-        <strong>Correction:</strong> the phrase <em>&ldquo;competitive but profitable&rdquo;</em> is only defensible if Bisco Misr avoids a low-price race, localizes packaging, and proves repeat sales before a national retail push.
+        <strong>Financial read-through:</strong> France can be profitable if Bisco Misr sells as a differentiated Egyptian brand with compliant French packaging&mdash;not if it enters a price war against entrenched local biscuits and private labels.
       </div>
     </div>
   </div>
@@ -1389,31 +1577,50 @@
       <h2 class="slide-title fade-up">Trade &amp; <span class="orange">Investment Climate</span></h2>
       <div class="divider fade-up"></div>
 
-      <div class="fin-two-col">
-        <div class="fin-panel fade-up">
-          <h3 class="orange">Entry Rules</h3>
-          <ul class="fin-list">
-            <li>France applies <strong>EU import rules</strong>, not a separate national tariff regime for packaged foods.</li>
-            <li>Goods must be classified in the <strong>Combined Nomenclature</strong> and checked in <strong>TARIC</strong> to determine duties and other measures.</li>
-            <li>EU food law requires <strong>traceability</strong> throughout the food chain.</li>
-            <li>French law makes <strong>French-language labeling compulsory</strong> for consumer-facing product information.</li>
-          </ul>
+      <div class="trade-road">
+        <div class="trade-step fade-up">
+          <div class="ts-num">STEP 01</div>
+          <h4>Classify the product</h4>
+          <p>Biscuits and wafers must be matched to the right CN/TARIC code before duties or trade measures are priced in.</p>
         </div>
+        <div class="trade-step fade-up">
+          <div class="ts-num">STEP 02</div>
+          <h4>Meet EU food rules</h4>
+          <p>Traceability, ingredients, and food-law compliance travel with the product from factory to French shelf.</p>
+        </div>
+        <div class="trade-step fade-up">
+          <div class="ts-num">STEP 03</div>
+          <h4>Localize for France</h4>
+          <p>Consumer-facing information must be French-first, so packaging is a market-entry cost, not an afterthought.</p>
+        </div>
+        <div class="trade-step fade-up">
+          <div class="ts-num">STEP 04</div>
+          <h4>Use the trade framework well</h4>
+          <p>The EU&ndash;Egypt agreement can help unit economics, but only when origin proof and customs paperwork are complete.</p>
+        </div>
+      </div>
 
-        <div class="fin-panel fade-up">
-          <h3 class="gold">Agreement &amp; FDI Upside</h3>
-          <ul class="fin-list">
-            <li>France recorded <strong>1,815 foreign investment transactions</strong> creating or maintaining <strong>59,254 jobs</strong> in 2023.</li>
-            <li>Trade.gov describes France as <strong>highly open to foreign investment</strong>, outside strategic sectors.</li>
-            <li>France offers world-class infrastructure: <strong>ports, roads, rail, and intermodal connections</strong> support national distribution.</li>
-            <li>The <strong>EU&ndash;Egypt Association Agreement</strong> has been in force since 2004, with additional agricultural trade easing since 2010.</li>
-            <li>In 2024, the EU accounted for <strong>22%</strong> of Egypt&rsquo;s total trade.</li>
-          </ul>
+      <div class="trade-fact-row">
+        <div class="trade-fact fade-up">
+          <div class="tf-value orange">1,815</div>
+          <div class="tf-label">foreign investment transactions in France during 2023</div>
+        </div>
+        <div class="trade-fact fade-up">
+          <div class="tf-value gold">59,254</div>
+          <div class="tf-label">jobs created or maintained by those investments</div>
+        </div>
+        <div class="trade-fact fade-up">
+          <div class="tf-value blue">22%</div>
+          <div class="tf-label">of Egypt&rsquo;s total trade was with the EU in 2024</div>
+        </div>
+        <div class="trade-fact fade-up">
+          <div class="tf-value orange">2004 / 2010</div>
+          <div class="tf-label">trade agreement milestones shaping EU&ndash;Egypt goods access</div>
         </div>
       </div>
 
       <div class="fin-note fade-up" style="max-width:1000px;margin:18px auto 0;">
-        <strong>Important correction:</strong> saying <em>&ldquo;possible import tariffs&rdquo;</em> is too vague. Real duty exposure depends on the exact biscuit/wafers tariff code, product composition, and valid proof of Egyptian origin.
+        <strong>Financial read-through:</strong> Duty exposure is product-specific. Bisco Misr should only lock margin assumptions after confirming the exact tariff code, composition treatment, and valid Egyptian-origin documentation.
       </div>
     </div>
   </div>
@@ -1422,7 +1629,7 @@
   <div class="slide light-slide" id="s16i" data-index="23">
     <div class="slide-inner" style="text-align:center;max-width:1120px;width:min(1120px,94cqi);">
       <div class="tag gold fade-up">Web Evidence</div>
-      <h2 class="slide-title fade-up">Webpage Quote <span class="gold">→ Slide Bullet</span></h2>
+      <h2 class="slide-title fade-up">Source Visual <span class="gold">→ Boardroom Point</span></h2>
       <div class="divider gold fade-up"></div>
 
       <div class="source-browser-grid">
@@ -1434,7 +1641,7 @@
           <div class="browser-body">
             <div class="browser-source">Trade.gov · Distribution and Sales Channels</div>
             <p class="browser-quote">France&rsquo;s retail distribution is an <mark>important, dynamic, highly sophisticated and competitive sector</mark> of activity.</p>
-            <div class="browser-bullet"><strong>Slide bullet</strong>France offers scale, but Bisco Misr must budget for tough chain selection, promotion costs, and retailer bargaining power.</div>
+            <div class="browser-bullet"><strong>Boardroom point</strong>France offers scale, but the route in is expensive, selective, and buyer-driven.</div>
           </div>
         </div>
 
@@ -1446,7 +1653,7 @@
           <div class="browser-body">
             <div class="browser-source">Trade.gov · Investment Climate Statement</div>
             <p class="browser-quote">France <mark>enthusiastically welcomes foreign investment</mark> and devotes significant resources to attracting it.</p>
-            <div class="browser-bullet"><strong>Slide bullet</strong>The operating climate supports entry, distribution partnerships, and possible local establishment if scale justifies it.</div>
+            <div class="browser-bullet"><strong>Boardroom point</strong>The operating climate supports distributor partnerships today and local establishment later if scale justifies it.</div>
           </div>
         </div>
 
@@ -1458,7 +1665,7 @@
           <div class="browser-body">
             <div class="browser-source">Trade.gov · Labeling / Marking Requirements</div>
             <p class="browser-quote"><mark>The use of French is compulsory</mark> in product designations, offers, presentations, invoices, and receipts.</p>
-            <div class="browser-bullet"><strong>Slide bullet</strong>Packaging, ingredients, and consumer-facing claims must be French-first before scale retail entry.</div>
+            <div class="browser-bullet"><strong>Boardroom point</strong>French-first packaging is non-negotiable before any serious retail rollout.</div>
           </div>
         </div>
 
@@ -1470,13 +1677,13 @@
           <div class="browser-body">
             <div class="browser-source">European Commission · EU Trade Relations with Egypt</div>
             <p class="browser-quote">The EU&ndash;Egypt Association Agreement <mark>creates a free-trade area</mark> by removing tariffs on industrial products and easing trade in some agricultural goods.</p>
-            <div class="browser-bullet"><strong>Slide bullet</strong>The trade framework may improve unit economics, but only if Bisco Misr meets origin and customs requirements.</div>
+            <div class="browser-bullet"><strong>Boardroom point</strong>The trade framework can improve unit economics, but only when origin and customs proof are fully in place.</div>
           </div>
         </div>
       </div>
 
       <p class="fade-up src-label" style="margin-top:18px;font-size:.74rem;letter-spacing:.1em;">
-        Use these source visuals as speaker evidence when converting website language into concise slide bullets.
+        These source visuals let the slide show the website evidence first, then convert it into the commercial takeaway.
       </p>
     </div>
   </div>

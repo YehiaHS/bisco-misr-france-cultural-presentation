@@ -42,17 +42,11 @@ The French market is attractive because one successful chain listing can create 
 
 ## 3. Market Potential for Bisco Misr
 
-### What is correct in the draft bullets
-The following ideas are directionally correct and should stay in the presentation:
-- France is a **large packaged food and snack market**.
-- Consumers are increasingly open to **international and ethnic brands**.
-- Bisco Misr has room to differentiate as an **authentic Egyptian snack brand**.
-- The market is **competitive**, but still commercially attractive for differentiated imported products.
-
-### What needs refinement
-- **“Large biscuit & snack market”** is valid, but the stronger evidence from official sources is that France has a mature, large-scale retail and packaged food distribution system rather than a single official public figure for “biscuit market size.”
-- **“High consumer purchasing power”** is true, but grocery remains price-competitive. High income does **not** mean consumers ignore price, especially in a market with strong private-label and discount formats.
-- **“Competitive but profitable”** should be framed more carefully as **“competitive but financially attractive if differentiation, pricing discipline, and compliance are strong.”**
+### Core findings
+- France is a **large packaged-food and snack opportunity**, best evidenced by the country&rsquo;s mature, high-capacity retail and grocery distribution system.
+- Consumers are open to **international and ethnic brands**, but grocery remains strongly price-competitive because private labels and discount formats are established.
+- Bisco Misr is best positioned as an **authentic Egyptian snack brand with localized packaging**, not as a low-cost generic biscuit.
+- The market is commercially attractive when **differentiation, pricing discipline, and compliance execution** are all strong.
 
 ### Best market-potential framing
 Bisco Misr’s best opportunity is not to compete head-on as a low-cost generic biscuit. It is to win through a combination of:
@@ -74,8 +68,7 @@ Bisco Misr’s best opportunity is not to compete head-on as a low-cost generic 
 - France is considered highly open to foreign investment. In 2023, foreign investors completed **1,815 investment transactions**, creating or maintaining **59,254 jobs**.
 - U.S. investment guidance describes France as **among the least restrictive countries for foreign investment**, except in strategic sectors.
 
-### Important correction to the draft bullets
-The bullet **“Possible import tariffs”** is too vague on its own. A more accurate statement is:
+### Tariff and customs implication
 
 > **Tariff treatment is product-specific and origin-specific.** Bisco Misr would need the exact HS/CN/TARIC classification for biscuits or wafers, plus valid origin documentation, to determine whether normal EU duty applies or preferential treatment is available.
 
